@@ -1,0 +1,48 @@
+/* Main Style */
+body {
+    font-family: sans-serif;
+}
+/* Notification Style */
+.notification {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: max-content;
+    padding: 5px 50px;
+    border-radius: 4px;
+    background-color: black;
+    box-shadow: 0px 0px 5px 5px rgba(0, 0, 0, 0.3);
+    transform: translateY(30px);
+    visibility: hidden;
+    font-weight: bold;
+    color: white;
+    animation: fade-in 3s linear forwards;
+}
+.notification__progress {
+    position: absolute;
+    left: 5px;
+    bottom: 5px;
+    width: calc(100% - 10px);
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: left;
+    background-image: linear-gradient(to right, #539bdb, #3250bf);
+    border-radius: inherit;
+    animation: load 2s 0.25s linear forwards;
+}
+@keyframes fade-in {
+    5% {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+    90% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+@keyframes load {
+    to {
+        transform: scaleX(1);
+    }
+}
